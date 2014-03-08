@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   puissance4.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/03/08 21:08:36 by mle-roy           #+#    #+#             */
+/*   Updated: 2014/03/08 21:43:53 by mle-roy          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUISSANCE4_H
 # define PUISSANCE4_H
@@ -25,5 +36,8 @@ int		print_winner(char chip);
 int		print_draw(void);
 int		is_finish(t_map *s_map, char chip);
 int		verify_letter(char *s);
+int		can_i_stop(t_map *s_map);
+int		can_i_play(t_map *s_map, int line, int col);
+int		play_something(t_map *s_map);
 
 #endif /* !PUISSANCE4_h */

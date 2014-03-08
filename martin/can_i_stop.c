@@ -6,12 +6,11 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 19:51:45 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 20:58:29 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 21:12:05 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "puissance4.h"
-#include "libft.h" //?
 
 //verifier le retour de play
 
