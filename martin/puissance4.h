@@ -24,5 +24,6 @@ void	print_map(t_map *s_map);
 int		print_winner(char chip);
 int		print_draw(void);
 int		is_finish(t_map *s_map, char chip);
+int		verify_letter(char *s);
 
 #endif /* !PUISSANCE4_h */
