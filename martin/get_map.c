@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 18:08:22 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 18:30:34 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 19:40:32 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,11 @@ static char			**init_tab(int col, int line)
 	return (map);
 }
 
+
 t_map				*get_map(char *col, char *line)
 {
 	t_map	*s_map;
-
+	
 	if ((s_map = init_map()) == NULL)
 		return (NULL);
 	s_map->col = ft_atoi(col);
