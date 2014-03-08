@@ -6,13 +6,13 @@
 #    By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/08 21:56:07 by mle-roy           #+#    #+#              #
-#    Updated: 2014/03/08 21:56:07 by mle-roy          ###   ########.fr        #
+#    Updated: 2014/03/08 23:15:20 by jbernabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=puissance4
 VERSION=1.0.2
-CFLAGS=-Wall -Werror -Wextra -g
+CFLAGS=-Wall -Werror -Wextra -g --debug
 INCLUDES=-I ./libft/includes
 LIBS=-L ./libft -l ft
 

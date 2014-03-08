@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 15:38:06 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 21:56:26 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 23:15:18 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	cmp_turn(t_map *s_map, char chip)
 	int		play;
 
 	play = -1;
-//	if ((play = can_i_win(s_map, chip)) > -1)
-//		;
+	if ((play = can_i_win(s_map)) > -1)
+		;
 	if ((play = can_i_stop(s_map)) > -1) //else au debut
 		;
 	else

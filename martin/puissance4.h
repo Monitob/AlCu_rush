@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 21:08:36 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 21:43:53 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 22:47:32 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ int		verify_letter(char *s);
 int		can_i_stop(t_map *s_map);
 int		can_i_play(t_map *s_map, int line, int col);
 int		play_something(t_map *s_map);
+int		is_play_col(t_map *s_map, int line, int col, int add);
+int		can_i_win(t_map *s_map);
+int		find_chip(t_map *s_map, int nb);
 
 #endif /* !PUISSANCE4_h */
