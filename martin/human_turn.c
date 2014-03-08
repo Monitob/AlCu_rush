@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 18:16:16 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 19:40:34 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/03/08 19:49:08 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int					verify_letter(char *s)
 	return (1);
 }
 
-void	human_turn(t_map *s_map, char chip)
+void				human_turn(t_map *s_map, char chip)
 {
 	char	*buf;
 	int		play;
