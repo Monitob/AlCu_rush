@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "puissance4.h"
 #include "libft.h"
-#include "get_next_line.h"
+/*#include "get_next_line.h"*/
 
 void	error_command(char *s)
 {
@@ -85,7 +85,7 @@ int		check_map(t_map *s_map)
 	return (0);
 }
 
-int		check_col(int col, t_map *s_map)
+int		check_col1(int col, t_map *s_map)
 {
 	int		flag;
 	int		i;
@@ -105,7 +105,7 @@ int		is_play_ok(int play, t_map *s_map)
 {
 	if (play < 0 || play > s_map->col)
 		return (1);
-	if (!check_col(play, s_map))
+	if (!check_col1(play, s_map))
 		return (1);
 	return (0);
 }

@@ -9,4 +9,7 @@ typedef struct	s_map
 	int		line;
 }				t_map;
 
+void	lets_play(int human, int cmp, t_map *s_map);
+int		print_draw(void);
+
 #endif /* !PUISSANCE4_h */
