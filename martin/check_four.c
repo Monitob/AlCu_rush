@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 18:01:53 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 18:06:02 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 20:53:27 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int		check_diag_left(t_map *s_map, int line, int col, char chip)
 	i = line;
 	j = col;
 	flag = 0;
-	while (i < s_map->line && j > 0 && i < (line + 4) && j > (col - 4))
+	while (i < s_map->line && j >= 0 && i < (line + 4) && j > (col - 4)) //j >= 0 ??
 	{
 		if (s_map->map[i][j] == chip)
 			flag++;
