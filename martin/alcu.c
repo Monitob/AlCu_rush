@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 15:38:06 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 18:29:08 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 19:44:44 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,21 @@ void	error_command(char *s)
 {
 	ft_putstr_fd(s, 2);
 	write(2, "\n", 1);
+	return ;
+}
+
+void	cmp_turn(t_map *s_map, char chip)
+{
+	int		play;
+
+	play = -1;
+	if ((play = can_i_win(s_map, chip)) > -1)
+		;
+	else if ((play = can_i_stop(s_map, chip)) > -1)
+		;
+	else
+		play = play_something(s_map, chip);
+	make_play(play, s_map)
 	return ;
 }
 
@@ -45,7 +60,7 @@ void	lets_play(int flag, t_map *s_map)
 		{
 			chip = P_TWO; //ici
 			human_turn(s_map, chip);
-//			cmp_turn(s_map); //a faire
+//			cmp_turn(s_map, chip); //a faire
 			flag = 1;
 		}
 		finish = is_finish(s_map, chip);
