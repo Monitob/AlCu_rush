@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 19:51:45 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 21:49:29 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 21:59:33 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		stop_line(t_map *s_map)
 				flag = 0;
 			if (flag == 3)
 			{
-				if (play = is_stop_line(s_map, i, j) > -1)
+				if ((play = is_stop_line(s_map, i, j)) > -1)
 					return (play);
 			}
 			j++;
@@ -79,8 +79,8 @@ int		stop_line(t_map *s_map)
 
 int		is_stop_col(t_map *s_map, int line, int col)
 {
-	if ((line - 3) >= 0 && s_map[line - 3][col] == EMPTY
-		&& s_map[line - 2][col] != EMPTY)
+	if ((line - 3) >= 0 && s_map->map[line - 3][col] == EMPTY
+		&& s_map->map[line - 2][col] != EMPTY)
 		return (col);
 	return (-1);
 }
@@ -106,7 +106,7 @@ int		stop_col(t_map *s_map)
 				flag = 0;
 			if (flag == 3)
 			{
-				if (play = is_stop_col(s_map, i, j) > -1)
+				if ((play = is_stop_col(s_map, i, j)) > -1)
 					return (play);
 			}
 			i++;
@@ -138,7 +138,7 @@ int		stop_right_diag(t_map *s_map, int line, int col)
 	{
 		if (can_i_play(s_map, (line - 1), (col - 1)))
 			play = col - 1;
-		else (can_i_play(s_map, (line + 3), (col + 3)))
+		else if (can_i_play(s_map, (line + 3), (col + 3)))
 			play = col + 3;
 	}
 	return (play);
@@ -166,7 +166,7 @@ int		stop_left_diag(t_map *s_map, int line, int col)
 	{
 		if (can_i_play(s_map, (line - 1), (col + 1)))
 			play = col - 1;
-		else (can_i_play(s_map, (line + 3), (col - 3)))
+		else if (can_i_play(s_map, (line + 3), (col - 3)))
 			play = col + 3;
 	}
 	return (play);

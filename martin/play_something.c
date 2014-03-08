@@ -6,11 +6,12 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 21:09:52 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 21:43:08 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 22:02:44 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <time.h>
+#include <stdlib.h>
 #include "puissance4.h"
 
 
@@ -66,7 +67,7 @@ int		find_line(t_map *s_map, int nb)
 				flag = 0;
 			if (flag == nb)
 			{
-				if (play = is_play_line(s_map, i, j, nb) > -1)
+				if ((play = is_play_line(s_map, i, j, nb)) > -1)
 					return (play);
 			}
 			j++;
@@ -78,8 +79,8 @@ int		find_line(t_map *s_map, int nb)
 
 int		is_play_col(t_map *s_map, int line, int col, int add)
 {
-	if ((line - add) >= 0 && s_map[line - add][col] == EMPTY
-		&& s_map[line - (add - 1)][col] != EMPTY)
+	if ((line - add) >= 0 && s_map->map[line - add][col] == EMPTY
+		&& s_map->map[line - (add - 1)][col] != EMPTY)
 		return (col);
 	return (-1);
 }
@@ -105,7 +106,7 @@ int		find_col(t_map *s_map, int nb)
 				flag = 0;
 			if (flag == nb)
 			{
-				if (play = is_play_col(s_map, i, j, nb) > -1)
+				if ((play = is_play_col(s_map, i, j, nb)) > -1)
 					return (play);
 			}
 			i++;
@@ -137,8 +138,8 @@ int		play_right_diag(t_map *s_map, int line, int col, int add)
 	{
 		if (can_i_play(s_map, (line - 1), (col - 1)))
 			play = col - 1;
-		else (can_i_play(s_map, (line + add), (col + add)))
-				 play = col + add;
+		else if (can_i_play(s_map, (line + add), (col + add)))
+			play = col + add;
 	}
 	return (play);
 }
@@ -165,7 +166,7 @@ int		play_left_diag(t_map *s_map, int line, int col, int add)
 	{
 		if (can_i_play(s_map, (line - 1), (col + 1)))
 			play = col - 1;
-		else (can_i_play(s_map, (line + add), (col - add)))
+		else if (can_i_play(s_map, (line + add), (col - add)))
 			play = col + add;
 	}
 	return (play);
@@ -212,6 +213,7 @@ int		find_chip(t_map *s_map, int nb)
 		return (play);
 	if ((play = find_diag(s_map, nb)) > -1)
 		return (play);
+	return (-1);
 }
 /*
 int		find_one_chip(t_map *s_map)
@@ -232,10 +234,10 @@ int		play_random(t_map *s_map)
 {
 	int		i;
 	int		j;
-	time_t	rand;
+	time_t	_rand;
 
-	rand = time(NULL);
-	srand(rand);
+	_rand = time(NULL);
+	srand(_rand);
 	i = rand();
 	j = rand();
 	if (i <= j)

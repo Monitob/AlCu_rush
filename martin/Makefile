@@ -5,23 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/03/08 18:24:16 by mle-roy           #+#    #+#              #
-#    Updated: 2014/03/08 18:24:16 by mle-roy          ###   ########.fr        #
+#    Created: 2014/03/08 21:56:07 by mle-roy           #+#    #+#              #
+#    Updated: 2014/03/08 21:56:07 by mle-roy          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=puissance4
-VERSION=1.0.1
+VERSION=1.0.2
 CFLAGS=-Wall -Werror -Wextra -g
 INCLUDES=-I ./libft/includes
 LIBS=-L ./libft -l ft
 
 SRC=alcu.c \
+	can_i_stop.c \
 	check_four.c \
+	cmp_turn.c \
 	get_map.c \
 	human_turn.c \
 	is_finish.c \
 	make_check_play.c \
+	play_something.c \
 	printf_fn.c \
 
 OBJ=$(SRC:.c=.o)
