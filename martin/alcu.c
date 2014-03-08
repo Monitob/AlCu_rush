@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 15:38:06 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 19:46:00 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 19:50:55 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	cmp_turn(t_map *s_map, char chip)
 		;
 	else
 		play = play_something(s_map, chip);
-	make_play(play, s_map)
+	make_play(play, s_map, chip);
 	return ;
 }
 
