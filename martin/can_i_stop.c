@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 19:51:45 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 21:12:05 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/08 21:49:29 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		stop_line(t_map *s_map)
 		{
 			if (s_map->map[i][j] == P_ONE)
 				flag++;
-			else if (s_map->map[i][j] == P_TWO || s_map->map[i][j] == EMPTY)
+			else// if (s_map->map[i][j] == P_TWO || s_map->map[i][j] == EMPTY)
 				flag = 0;
 			if (flag == 3)
 			{
