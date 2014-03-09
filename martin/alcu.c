@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 15:38:06 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/09 16:38:12 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/03/09 19:50:52 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,84 +16,63 @@
 #include "libft.h"
 #include "get_next_line.h"
 
-#include <stdio.h> //nononon
-
-void	error_command(char *s)
+void				error_command(char *s)
 {
 	ft_putstr_fd(s, 2);
 	write(2, "\n", 1);
 	return ;
 }
 
-void	cmp_turn(t_map *s_map, char chip)
+static void			lets_play(int flag, t_map *s_map)
 {
-	int		play;
-
-	play = -1;
-	if ((play = can_i_win(s_map)) > -1)
-		;
-	if ((play = can_i_stop(s_map)) > -1) //else au debut
-		;
-	else
-		play = play_something(s_map);
-	make_play(play, s_map, chip);
-	return ;
-}
-
-void	lets_play(int flag, t_map *s_map)
-{
-	int		finish;
-	char	chip;
+	int				finish;
+	char			chip;
 
 	finish = -1;
-//	chip = '.';
 	while (finish)
 	{
-		print_map(s_map);
+		print_map(s_map, flag);
 		if (flag)
 		{
-			chip = P_ONE; //ici
+			chip = P_ONE;
 			human_turn(s_map, chip);
 			flag = 0;
 		}
 		else
 		{
-			chip = P_TWO; //ici
-//			human_turn(s_map, chip);
-			cmp_turn(s_map, chip); //a faire
+			chip = P_TWO;
+			cmp_turn(s_map, chip);
 			flag = 1;
 		}
 		finish = is_finish(s_map, chip);
 	}
 }
 
-void	start_game(t_map *s_map)
+static void			start_game(t_map *s_map)
 {
-	int		player_one;
-	int		player_cmp;
-	time_t	_time;
-	int		flag;
+	int				player_one;
+	time_t			_time;
+	int				flag;
 
 	flag = 0;
 	_time = time(NULL);
 	srand(_time);
 	player_one = rand();
-	player_cmp = rand();
-	if (player_one >= player_cmp)
+	if (player_one % 2 == 0)
 		flag = 1;
 	lets_play(flag, s_map);
-	print_map(s_map);
+	print_map(s_map, 3);
 }
 
-void	free_map(t_map *s_map)
+static void			free_map(t_map *s_map)
 {
 	ft_tabfree(&(s_map->map));
 	free(s_map);
 }
 
-int		main(int argc, char **argv)
+int					main(int argc, char **argv)
 {
-	t_map	*s_map;
+	t_map			*s_map;
 
 	if (argc != 3)
 	{

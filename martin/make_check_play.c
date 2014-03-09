@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 18:12:29 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 18:32:09 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/09 19:32:59 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int		is_valid(int col, t_map *s_map)
 	i = 0;
 	while (i < s_map->line)
 	{
-		if (s_map->map[i][col] == EMPTY) // ici
+		if (s_map->map[i][col] == EMPTY)
 			return (0);
 		i++;
 	}
@@ -28,7 +28,7 @@ static int		is_valid(int col, t_map *s_map)
 
 int				is_play_ok(int play, t_map *s_map)
 {
-	if (play < 0 || play > s_map->col)
+	if (play < 0 || play >= s_map->col)
 		return (1);
 	if (is_valid(play, s_map))
 		return (1);
@@ -42,7 +42,7 @@ void			make_play(int play, t_map *s_map, char chip)
 	i = 0;
 	while (i < s_map->line)
 	{
-		if (s_map->map[i][play] != EMPTY) // ici
+		if (s_map->map[i][play] != EMPTY)
 			break ;
 		i++;
 	}

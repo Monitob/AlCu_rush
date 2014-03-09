@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 18:08:22 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 19:40:32 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/03/09 19:30:24 by mle-roy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,16 @@
 
 static int			ft_verify_dimension(int x, int y)
 {
-//	int	ver;
-
-//	ver = (x * y) % 2;
 	if (x < 7 || y < 6)
 	{
 		error_command("Puissance4:\nminimum col = 7\nminimum line = 6");
-		return(-1);
+		return (-1);
 	}
-	if (x > 2000 || y > 2000) 
+	if (x > COL_MAX || y > LINE_MAX)
 	{
 		error_command("maximum size 2000 x 2000");
-		return(-1);
+		return (-1);
 	}
-//	if (ver != 0)
-//	{
-//		error_command("Puissance4: map is too big !");
-//		return(-1);
-//	}
 	return (0);
 }
 
@@ -70,7 +62,7 @@ static char			**init_tab(int col, int line)
 		i = 0;
 		while (i < col)
 		{
-			map[j][i] = EMPTY; //ici
+			map[j][i] = EMPTY;
 			i++;
 		}
 		j++;
@@ -82,7 +74,7 @@ static char			**init_tab(int col, int line)
 t_map				*get_map(char *col, char *line)
 {
 	t_map	*s_map;
-	
+
 	if ((s_map = init_map()) == NULL)
 		return (NULL);
 	s_map->col = ft_atoi(col);
