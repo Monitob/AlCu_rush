@@ -6,7 +6,7 @@
 /*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 18:18:09 by mle-roy           #+#    #+#             */
-/*   Updated: 2014/03/08 18:32:41 by mle-roy          ###   ########.fr       */
+/*   Updated: 2014/03/09 16:38:20 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ void	print_map(t_map *s_map)
 	int		i;
 
 	i = 0;
+	ft_putstr("\x11[\x1b[32mAl_Cu\x11]\x1b[0m \n");	
 	while (i < s_map->line)
 	{
 		ft_putendl(s_map->map[i]);
 		i++;
 	}
+	write(1, "\n", 1);
 }
